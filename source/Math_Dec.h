@@ -2,6 +2,11 @@
 #ifndef MATH_DECLARATIONS_H
 #define MATH_DECLARATIONS_H
 
+#include <cmath>
+#include <math.h>
+
+#define CLASS_ROOT 0
+
 #define CLASS_VEC2 1L << 1
 #define CLASS_VEC3 1L << 2
 #define CLASS_VEC4 1L << 3
@@ -24,8 +29,13 @@
 //needs to be renamed later
 class MathRootClass
 {
-public:
-	const  unsigned int ClassID;
+protected:
+	MathRootClass()
+	{
+		ClassID = CLASS_ROOT;
+	}
+
+	unsigned int ClassID;
 };
 template<typename VecType = float>
 class Vec2;
